@@ -37,7 +37,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
 .qty-ctrl{display:flex;align-items:center;background:var(--cream);border-radius:20px;border:1.5px solid var(--border);overflow:hidden;}
 .qty-ctrl button{border:none;background:none;width:30px;height:30px;font-size:18px;cursor:pointer;color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center;}
 .qty-ctrl button:hover{background:rgba(13,27,62,.07);}
-.qty-ctrl input{width:34px;text-align:center;border:none;background:none;font-size:14px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;outline:none;}
+.qty-ctrl input{width:34px;text-align:center;border:none;background:none;font-size:14px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;outline:none;-moz-appearance:textfield;appearance:textfield;}
 .qty-ctrl input::-webkit-outer-spin-button,.qty-ctrl input::-webkit-inner-spin-button{-webkit-appearance:none;}
 .summary{background:var(--navy);color:white;border-radius:16px;padding:20px;margin-bottom:16px;}
 .summary-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--gold);margin-bottom:12px;}
@@ -64,7 +64,9 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
 .twint-active{display:none;}
 .twint-num{background:white;border:2px solid var(--navy);border-radius:10px;padding:14px;text-align:center;margin-bottom:12px;}
 .twint-num-label{font-size:9px;font-weight:700;letter-spacing:1px;color:#888;text-transform:uppercase;margin-bottom:4px;}
-.twint-phone{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:3px;color:var(--navy);}
+.twint-phone{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:3px;color:var(--navy);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+.copy-btn{background:var(--navy);color:white;border:none;border-radius:8px;padding:6px 10px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .2s;}
+.copy-btn:hover{background:#162b5f;transform:translateY(-1px);}
 .twint-pill{background:var(--navy);color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;padding:4px 16px;border-radius:20px;display:inline-block;margin-top:6px;}
 .twint-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:#000;color:white;border:none;border-radius:10px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;transition:background .2s;}
 .twint-btn:hover{background:#222;}
@@ -155,8 +157,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
     </div>
     <div class="fg"><label>Adresse / lieu</label><input type="text" id="addr" placeholder="Adresse de livraison ou lieu de remise en main propre"></div>
     <div class="form-row">
-      <div class="fg"><label>Livraison</label><select id="del"><option value="Remise en main propre">Remise en main propre</option><option value="Livraison">Livraison</option></select></div>
-      <div class="fg"><label>Paiement *</label><select id="pay" onchange="togglePay(this.value)"><option value="twint">TWINT</option><option value="especes">Espèces</option><option value="facture">Facture à réception</option></select></div>
+      <div class="fg"><label>Livraison \*</label><select id="del"><option value="" selected disabled>Choisir</option><option value="Remise en main propre">Remise en main propre</option><option value="Livraison">Livraison</option></select></div>
+      <div class="fg"><label>Paiement *</label><select id="pay" onchange="togglePay(this.value)"><option value="" selected disabled>Choisir</option><option value="twint">TWINT</option><option value="especes">Espèces</option><option value="facture">Facture à réception</option></select></div>
     </div>
 
     <div class="twint-box show" id="twintBox">
@@ -166,22 +168,16 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
         <div class="twint-active" id="tActive">
           <div class="twint-num">
             <div class="twint-num-label">Envoie le montant à ce numéro</div>
-            <div class="twint-phone">079 671 44 41</div>
+            <div class="twint-phone">079 671 44 41 <button class="copy-btn" onclick="copyTwint()">Copier</button></div>
             <div class="twint-pill" id="tPill"></div>
           </div>
-          <a class="twint-btn" id="twintLink" href="twint://">
-            <span class="twint-logo" style="background:white;color:#000;">TWINT</span>
-            Ouvrir l’application TWINT
-          </a>
-          <ul class="twint-how">
-            <li>Clique sur le bouton noir pour ouvrir TWINT</li>
-            <li>Choisis “Envoyer de l’argent”</li>
-            <li>Entre le numéro <strong>079 671 44 41</strong></li>
-            <li>Envoie exactement <strong id="tAmt"></strong></li>
-            <li>Mets ton prénom et ton nom dans le message TWINT</li>
-            <li>Reviens ici et clique sur “Envoyer ma commande”</li>
-          </ul>
-          <div class="twint-warning">Le bouton ouvre TWINT sur téléphone. Le montant ne peut pas être rempli automatiquement sans compte TWINT Business / PayLink officiel.</div>
+          <div style="background:#000;color:white;border-radius:10px;padding:14px;text-align:center;font-size:14px;font-weight:700;line-height:1.7;">
+            📱 Ouvre ton application TWINT<br>
+            ➜ Entre le numéro <strong>079 671 44 41</strong><br>
+            ➜ Envoie exactement <strong id="tAmt"></strong><br>
+            ➜ Mets ton prénom et ton nom en message
+          </div>
+          
         </div>
       </div>
     </div>
@@ -218,7 +214,16 @@ const TWINT_PHONE='079 671 44 41';
 
 function chg(id,d){
   const el=document.getElementById(id);
-  if(el){el.value=Math.max(0,(parseInt(el.value,10)||0)+d);update();}
+  if(el){el.value=Math.max(0,(parseInt(el.value,10)||0)+d);function copyTwint(){
+  navigator.clipboard.writeText(TWINT_PHONE).then(()=>{
+    const btn=document.querySelector('.copy-btn');
+    const old=btn.textContent;
+    btn.textContent='Copié !';
+    setTimeout(()=>btn.textContent=old,1500);
+  });
+}
+
+update();}
 }
 
 function getQty(id){
@@ -260,14 +265,13 @@ function update(){
   const tActive=document.getElementById('tActive');
   const tPill=document.getElementById('tPill');
   const tAmt=document.getElementById('tAmt');
-  const twintLink=document.getElementById('twintLink');
 
   if(total>0&&pay==='twint'){
     tEmpty.style.display='none';
     tActive.style.display='block';
     tPill.textContent=total+'.-';
     tAmt.textContent=total+'.-';
-    twintLink.href='twint://';
+    
   }else{
     tEmpty.style.display='block';
     tActive.style.display='none';
@@ -323,7 +327,9 @@ function submitOrder(){
   const fn=document.getElementById('fn').value.trim();
   const ln=document.getElementById('ln').value.trim();
   const em=document.getElementById('em').value.trim();
-  if(!fn||!ln||!em){alert('Remplis les champs obligatoires : prénom, nom et email.');return;}
+  const del=document.getElementById('del').value;
+  const pay=document.getElementById('pay').value;
+  if(!fn||!ln||!em||!del||!pay){alert('Remplis les champs obligatoires : prénom, nom, email, livraison et paiement.');return;}
   const body=buildOrderBody();
   const subject='Commande vin – '+fn+' '+ln+' – '+total+'.-';
   window.location.href='mailto:'+ORDER_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
