@@ -9,7 +9,6 @@
 :root{--navy:#0d1b3e;--red:#c0392b;--gold:#c9a84c;--cream:#f7f3ec;--border:#d4c9b0;}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--navy);}
-
 .hero{background:linear-gradient(135deg,#0d1b3e,#1a2f5e);color:white;text-align:center;padding:40px 20px 48px;}
 .hero-icon{font-size:32px;display:block;margin-bottom:6px;animation:float 3s ease-in-out infinite;}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
@@ -17,13 +16,9 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
 .hero h1 span{color:var(--red);}
 .hero p{font-size:13px;color:rgba(255,255,255,.75);margin-top:8px;}
 .hero p strong{color:var(--gold);}
-
 .container{max-width:720px;margin:0 auto;padding:24px 16px 60px;}
-
 .sec{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;margin:24px 0 14px;display:flex;align-items:center;gap:10px;}
 .sec::after{content:'';flex:1;height:2px;background:linear-gradient(to right,var(--gold),transparent);}
-
-/* WINES */
 .wine-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
 .wine-card{background:white;border-radius:16px;padding:20px 14px;box-shadow:0 2px 12px rgba(13,27,62,.07);text-align:center;}
 .blob{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 10px;}
@@ -36,27 +31,21 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
 .w-note{font-size:11px;color:#aaa;margin-top:2px;}
 .w-pack{font-size:10px;background:#eef1f7;border-radius:6px;padding:3px 8px;color:var(--navy);font-weight:600;margin-top:4px;display:inline-block;}
 .w-stock{font-size:10px;color:var(--red);font-weight:700;margin-top:2px;}
-
-/* QTY */
 .qty-block{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
 .qty-row{display:flex;align-items:center;justify-content:space-between;}
 .qty-label{font-size:11px;font-weight:600;color:#666;}
 .qty-ctrl{display:flex;align-items:center;background:var(--cream);border-radius:20px;border:1.5px solid var(--border);overflow:hidden;}
 .qty-ctrl button{border:none;background:none;width:30px;height:30px;font-size:18px;cursor:pointer;color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center;}
 .qty-ctrl button:hover{background:rgba(13,27,62,.07);}
-.qty-ctrl input{width:34px;text-align:center;border:none;background:none;font-size:14px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;}
+.qty-ctrl input{width:34px;text-align:center;border:none;background:none;font-size:14px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;outline:none;}
 .qty-ctrl input::-webkit-outer-spin-button,.qty-ctrl input::-webkit-inner-spin-button{-webkit-appearance:none;}
-
-/* SUMMARY */
 .summary{background:var(--navy);color:white;border-radius:16px;padding:20px;margin-bottom:16px;}
 .summary-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--gold);margin-bottom:12px;}
-.s-line{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.8);}
+.s-line{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.8);gap:12px;}
 .s-line:last-child{border-bottom:none;}
 .s-total{font-size:18px;font-weight:700;color:white;padding-top:10px;}
 .s-total .amt{color:var(--gold);}
 .s-empty{font-size:12px;color:rgba(255,255,255,.35);text-align:center;padding:8px 0;font-style:italic;}
-
-/* FORM */
 .form-card{background:white;border-radius:16px;padding:22px;box-shadow:0 2px 12px rgba(13,27,62,.07);margin-bottom:16px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 @media(max-width:480px){.form-row{grid-template-columns:1fr;}}
@@ -65,8 +54,6 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
 .fg input,.fg select,.fg textarea{padding:10px 12px;border:1.5px solid var(--border);border-radius:9px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--navy);background:var(--cream);outline:none;transition:border-color .2s;}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--navy);background:white;}
 .fg textarea{resize:vertical;min-height:65px;}
-
-/* TWINT */
 .twint-box{display:none;margin-top:10px;border-radius:12px;overflow:hidden;border:2px solid #000;}
 .twint-box.show{display:block;}
 .twint-top{background:#000;padding:12px 16px;display:flex;align-items:center;gap:8px;}
@@ -84,17 +71,12 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
 .twint-how{font-size:11px;color:#555;margin-top:10px;line-height:1.8;}
 .twint-how li{list-style:none;padding-left:2px;}
 .twint-how li::before{content:'→ ';color:var(--navy);font-weight:700;}
-
+.twint-warning{font-size:11px;color:#7a4b00;background:#fff3cd;border-left:3px solid #c9a84c;padding:9px 10px;margin-top:10px;border-radius:0 8px 8px 0;line-height:1.45;}
 .pay-note{background:#e8f0fe;border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 12px;font-size:12px;color:var(--navy);margin-top:10px;display:none;}
-
-/* SUBMIT */
 .submit-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--red),#9e1a1a);color:white;border:none;border-radius:12px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;cursor:pointer;box-shadow:0 4px 14px rgba(192,57,43,.3);display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;transition:all .2s;}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(192,57,43,.4);}
-
 .contact-bar{text-align:center;padding:18px;font-size:12px;color:#aaa;}
 .contact-bar a{color:var(--navy);font-weight:600;text-decoration:none;}
-
-/* SUCCESS */
 .success-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,62,.85);z-index:999;align-items:center;justify-content:center;padding:20px;}
 .success-overlay.show{display:flex;}
 .success-box{background:white;border-radius:20px;padding:40px 28px;text-align:center;max-width:380px;width:100%;}
@@ -114,10 +96,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
 </div>
 
 <div class="container">
-
   <div class="sec">Choisir mes vins</div>
   <div class="wine-grid">
-
     <div class="wine-card">
       <div class="blob b-w">🥂</div>
       <div class="w-appel">Épesses · Lavaux</div>
@@ -126,14 +106,8 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
       <div class="w-note">la bouteille 70cl</div>
       <div class="w-pack">📦 Carton × 12 → 192.-</div>
       <div class="qty-block">
-        <div class="qty-row">
-          <span class="qty-label">Bouteilles</span>
-          <div class="qty-ctrl"><button onclick="chg('cb',-1)">−</button><input type="number" id="cb" value="0" min="0" onchange="update()"><button onclick="chg('cb',1)">+</button></div>
-        </div>
-        <div class="qty-row">
-          <span class="qty-label">Cartons × 12</span>
-          <div class="qty-ctrl"><button onclick="chg('cp',-1)">−</button><input type="number" id="cp" value="0" min="0" onchange="update()"><button onclick="chg('cp',1)">+</button></div>
-        </div>
+        <div class="qty-row"><span class="qty-label">Bouteilles</span><div class="qty-ctrl"><button onclick="chg('cb',-1)">−</button><input type="number" id="cb" value="0" min="0" oninput="update()"><button onclick="chg('cb',1)">+</button></div></div>
+        <div class="qty-row"><span class="qty-label">Cartons × 12</span><div class="qty-ctrl"><button onclick="chg('cp',-1)">−</button><input type="number" id="cp" value="0" min="0" oninput="update()"><button onclick="chg('cp',1)">+</button></div></div>
       </div>
     </div>
 
@@ -145,10 +119,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
       <div class="w-note">la bouteille 70cl</div>
       <div class="w-stock">⚠️ Stock limité</div>
       <div class="qty-block">
-        <div class="qty-row">
-          <span class="qty-label">Bouteilles</span>
-          <div class="qty-ctrl"><button onclick="chg('rb',-1)">−</button><input type="number" id="rb" value="0" min="0" onchange="update()"><button onclick="chg('rb',1)">+</button></div>
-        </div>
+        <div class="qty-row"><span class="qty-label">Bouteilles</span><div class="qty-ctrl"><button onclick="chg('rb',-1)">−</button><input type="number" id="rb" value="0" min="0" oninput="update()"><button onclick="chg('rb',1)">+</button></div></div>
       </div>
     </div>
 
@@ -160,27 +131,18 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
       <div class="w-note">la bouteille 70cl</div>
       <div class="w-pack">📦 Carton × 12 → 216.-</div>
       <div class="qty-block">
-        <div class="qty-row">
-          <span class="qty-label">Bouteilles</span>
-          <div class="qty-ctrl"><button onclick="chg('pb',-1)">−</button><input type="number" id="pb" value="0" min="0" onchange="update()"><button onclick="chg('pb',1)">+</button></div>
-        </div>
-        <div class="qty-row">
-          <span class="qty-label">Cartons × 12</span>
-          <div class="qty-ctrl"><button onclick="chg('pp',-1)">−</button><input type="number" id="pp" value="0" min="0" onchange="update()"><button onclick="chg('pp',1)">+</button></div>
-        </div>
+        <div class="qty-row"><span class="qty-label">Bouteilles</span><div class="qty-ctrl"><button onclick="chg('pb',-1)">−</button><input type="number" id="pb" value="0" min="0" oninput="update()"><button onclick="chg('pb',1)">+</button></div></div>
+        <div class="qty-row"><span class="qty-label">Cartons × 12</span><div class="qty-ctrl"><button onclick="chg('pp',-1)">−</button><input type="number" id="pp" value="0" min="0" oninput="update()"><button onclick="chg('pp',1)">+</button></div></div>
       </div>
     </div>
-
   </div>
 
-  <!-- RECAP -->
   <div class="sec">Récapitulatif</div>
   <div class="summary">
     <div class="summary-title">🧾 Mon panier</div>
     <div id="sumLines"><div class="s-empty">Ajoute des bouteilles ci-dessus…</div></div>
   </div>
 
-  <!-- FORM -->
   <div class="sec">Mes informations</div>
   <div class="form-card">
     <div class="form-row">
@@ -191,62 +153,47 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
       <div class="fg"><label>Email *</label><input type="email" id="em" placeholder="jean@exemple.ch"></div>
       <div class="fg"><label>Téléphone</label><input type="tel" id="ph" placeholder="079 000 00 00"></div>
     </div>
-    <div class="fg"><label>Adresse</label><input type="text" id="addr" placeholder="Rue des Alpes 12, 1920 Martigny"></div>
+    <div class="fg"><label>Adresse / lieu</label><input type="text" id="addr" placeholder="Adresse de livraison ou lieu de remise en main propre"></div>
     <div class="form-row">
-      <div class="fg"><label>Livraison</label>
-        <select id="del"><option value="retrait">Retrait sur place</option><option value="livraison">Livraison</option></select>
-      </div>
-      <div class="fg"><label>Paiement *</label>
-        <select id="pay" onchange="togglePay(this.value)">
-          <option value="twint">Twint</option>
-          <option value="especes">Espèces</option>
-          <option value="facture">Facture à réception</option>
-        </select>
-      </div>
+      <div class="fg"><label>Livraison</label><select id="del"><option value="Remise en main propre">Remise en main propre</option><option value="Livraison">Livraison</option></select></div>
+      <div class="fg"><label>Paiement *</label><select id="pay" onchange="togglePay(this.value)"><option value="twint">TWINT</option><option value="especes">Espèces</option><option value="facture">Facture à réception</option></select></div>
     </div>
 
-    <!-- TWINT -->
     <div class="twint-box show" id="twintBox">
-      <div class="twint-top">
-        <span class="twint-logo">TWINT</span>
-        <span>Paiement par Twint</span>
-      </div>
+      <div class="twint-top"><span class="twint-logo">TWINT</span><span>Paiement par TWINT</span></div>
       <div class="twint-content">
         <div class="twint-empty" id="tEmpty">👆 Ajoute des vins pour voir le montant à envoyer.</div>
         <div class="twint-active" id="tActive">
           <div class="twint-num">
-            <div class="twint-num-label">Envoie ce montant à</div>
+            <div class="twint-num-label">Envoie le montant à ce numéro</div>
             <div class="twint-phone">079 671 44 41</div>
             <div class="twint-pill" id="tPill"></div>
           </div>
           <a class="twint-btn" id="twintLink" href="twint://">
             <span class="twint-logo" style="background:white;color:#000;">TWINT</span>
-            Ouvrir Twint et payer
+            Ouvrir l’application TWINT
           </a>
           <ul class="twint-how">
-            <li>Clique ci-dessus pour ouvrir Twint</li>
-            <li>Envoie <strong id="tAmt"></strong> au <strong>079 671 44 41</strong></li>
-            <li>Mets ton prénom en message</li>
-            <li>Puis envoie ta commande ci-dessous</li>
+            <li>Clique sur le bouton noir pour ouvrir TWINT</li>
+            <li>Choisis “Envoyer de l’argent”</li>
+            <li>Entre le numéro <strong>079 671 44 41</strong></li>
+            <li>Envoie exactement <strong id="tAmt"></strong></li>
+            <li>Mets ton prénom et ton nom dans le message TWINT</li>
+            <li>Reviens ici et clique sur “Envoyer ma commande”</li>
           </ul>
+          <div class="twint-warning">Le bouton ouvre TWINT sur téléphone. Le montant ne peut pas être rempli automatiquement sans compte TWINT Business / PayLink officiel.</div>
         </div>
       </div>
     </div>
 
     <div class="pay-note" id="payNote"></div>
-
     <div class="fg" style="margin-top:12px;"><label>Remarques</label><textarea id="msg" placeholder="Ex: merci de me contacter par SMS…"></textarea></div>
     <button class="submit-btn" onclick="submitOrder()">🍾 Envoyer ma commande</button>
   </div>
-
 </div>
 
-<div class="contact-bar">
-  📞 <a href="tel:0796714441">079 671 44 41</a> &nbsp;|&nbsp;
-  ✉️ <a href="mailto:carobron@bluewin.ch">carobron@bluewin.ch</a>
-</div>
+<div class="contact-bar">📞 <a href="tel:0796714441">079 671 44 41</a> &nbsp;|&nbsp; ✉️ <a href="mailto:carobron@bluewin.ch">carobron@bluewin.ch</a></div>
 
-<!-- SUCCESS -->
 <div class="success-overlay" id="successOverlay">
   <div class="success-box">
     <div class="success-icon">🎿🍾</div>
@@ -260,52 +207,68 @@ body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--nav
 
 <script>
 const ITEMS={
-  cb:{label:'Chasselas bouteille',price:18},
-  cp:{label:'Chasselas carton×12',price:192},
-  rb:{label:'Rosé bouteille',price:18},
-  pb:{label:'Pinot Noir bouteille',price:20},
-  pp:{label:'Pinot Noir carton×12',price:216},
+  cb:{label:'Chasselas bouteille',price:18,bottles:1},
+  cp:{label:'Chasselas carton × 12',price:192,bottles:12},
+  rb:{label:'Rosé bouteille',price:18,bottles:1},
+  pb:{label:'Pinot Noir bouteille',price:20,bottles:1},
+  pp:{label:'Pinot Noir carton × 12',price:216,bottles:12}
 };
+const ORDER_EMAIL='carobron@bluewin.ch';
+const TWINT_PHONE='079 671 44 41';
 
 function chg(id,d){
   const el=document.getElementById(id);
-  if(el){el.value=Math.max(0,(parseInt(el.value)||0)+d);update();}
+  if(el){el.value=Math.max(0,(parseInt(el.value,10)||0)+d);update();}
+}
+
+function getQty(id){
+  return Math.max(0,parseInt(document.getElementById(id)?.value,10)||0);
 }
 
 function getTotal(){
-  let t=0;
-  for(const[id,info] of Object.entries(ITEMS)){
-    const el=document.getElementById(id);
-    if(el) t+=(parseInt(el.value)||0)*info.price;
-  }
-  return t;
+  let total=0;
+  for(const[id,info]of Object.entries(ITEMS)) total+=getQty(id)*info.price;
+  return total;
+}
+
+function getBottleCount(){
+  let count=0;
+  for(const[id,info]of Object.entries(ITEMS)) count+=getQty(id)*info.bottles;
+  return count;
 }
 
 function update(){
-  const tot=getTotal();
-  let html='',t=0;
-  for(const[id,info] of Object.entries(ITEMS)){
-    const q=parseInt(document.getElementById(id)?.value)||0;
-    if(q>0){const sub=q*info.price;t+=sub;html+=`<div class="s-line"><span>${q} × ${info.label}</span><span>${sub}.-</span></div>`;}
+  const total=getTotal();
+  let html='';
+  for(const[id,info]of Object.entries(ITEMS)){
+    const q=getQty(id);
+    if(q>0){
+      const sub=q*info.price;
+      html+=`<div class="s-line"><span>${q} × ${info.label}</span><span>${sub}.-</span></div>`;
+    }
   }
-  if(!html) html='<div class="s-empty">Ajoute des bouteilles ci-dessus…</div>';
-  else html+=`<div class="s-line s-total"><span>Total</span><span class="amt">${t}.-</span></div>`;
+  if(!html){
+    html='<div class="s-empty">Ajoute des bouteilles ci-dessus…</div>';
+  }else{
+    html+=`<div class="s-line"><span>Total bouteilles</span><span>${getBottleCount()}</span></div>`;
+    html+=`<div class="s-line s-total"><span>Total</span><span class="amt">${total}.-</span></div>`;
+  }
   document.getElementById('sumLines').innerHTML=html;
 
+  const pay=document.getElementById('pay').value;
   const tEmpty=document.getElementById('tEmpty');
   const tActive=document.getElementById('tActive');
   const tPill=document.getElementById('tPill');
   const tAmt=document.getElementById('tAmt');
   const twintLink=document.getElementById('twintLink');
 
-  if(tot>0&&document.getElementById('pay').value==='twint'){
+  if(total>0&&pay==='twint'){
     tEmpty.style.display='none';
     tActive.style.display='block';
-    if(tPill) tPill.textContent=tot+'.-';
-    if(tAmt) tAmt.textContent=tot+'.-';
-    // Lien Twint : ouvre l'app directement sur mobile
-    if(twintLink) twintLink.href="twint://";
-  } else {
+    tPill.textContent=total+'.-';
+    tAmt.textContent=total+'.-';
+    twintLink.href='twint://';
+  }else{
     tEmpty.style.display='block';
     tActive.style.display='none';
   }
@@ -317,35 +280,57 @@ function togglePay(v){
   if(v==='twint'){
     box.classList.add('show');
     note.style.display='none';
-    update();
-  } else {
+  }else{
     box.classList.remove('show');
     note.style.display='block';
-    note.textContent='💳 Paiement par '+(v==='especes'?'espèces':'facture')+' à la réception de ta commande.';
+    note.textContent='💳 Paiement par '+(v==='especes'?'espèces':'facture à réception')+'.';
   }
+  update();
 }
 
-function submitOrder(){
-  const tot=getTotal();
-  if(!tot){alert('Ajoute au moins une bouteille !');return;}
+function buildOrderBody(){
   const fn=document.getElementById('fn').value.trim();
   const ln=document.getElementById('ln').value.trim();
   const em=document.getElementById('em').value.trim();
-  if(!fn||!ln||!em){alert('Remplis les champs obligatoires (Prénom, Nom, Email).');return;}
-  let body=`Nouvelle commande de vin\n\nClient: ${fn} ${ln}\nEmail: ${em}\n`;
-  const ph=document.getElementById('ph').value.trim();if(ph)body+=`Tél: ${ph}\n`;
-  const addr=document.getElementById('addr').value.trim();if(addr)body+=`Adresse: ${addr}\n`;
-  const pl={twint:'Twint',especes:'Espèces',facture:'Facture à réception'};
-  body+=`Livraison: ${document.getElementById('del').value}\nPaiement: ${pl[document.getElementById('pay').value]}\n\n--- Commande ---\n`;
-  for(const[id,info] of Object.entries(ITEMS)){
-    const q=parseInt(document.getElementById(id)?.value)||0;
-    if(q>0) body+=`${q} × ${info.label} = ${q*info.price}.-\n`;
+  const ph=document.getElementById('ph').value.trim();
+  const addr=document.getElementById('addr').value.trim();
+  const del=document.getElementById('del').value;
+  const pay=document.getElementById('pay').value;
+  const msg=document.getElementById('msg').value.trim();
+  const payLabels={twint:'TWINT',especes:'Espèces',facture:'Facture à réception'};
+  let body='Nouvelle commande de vin\n\n';
+  body+='Client : '+fn+' '+ln+'\n';
+  body+='Email : '+em+'\n';
+  if(ph)body+='Téléphone : '+ph+'\n';
+  if(addr)body+='Adresse / lieu : '+addr+'\n';
+  body+='Mode de remise : '+del+'\n';
+  body+='Paiement : '+payLabels[pay]+'\n';
+  if(pay==='twint')body+='TWINT à envoyer au : '+TWINT_PHONE+'\n';
+  body+='\n--- Commande ---\n';
+  for(const[id,info]of Object.entries(ITEMS)){
+    const q=getQty(id);
+    if(q>0)body+=q+' × '+info.label+' = '+(q*info.price)+'.-\n';
   }
-  body+=`\nTOTAL: ${tot}.-`;
-  const msg=document.getElementById('msg').value.trim();if(msg)body+=`\n\nRemarques: ${msg}`;
-  window.location.href=`mailto:carobron@bluewin.ch?subject=${encodeURIComponent('Commande vin – '+fn+' '+ln)}&body=${encodeURIComponent(body)}`;
+  body+='\nNombre total de bouteilles : '+getBottleCount()+'\n';
+  body+='TOTAL : '+getTotal()+'.-\n';
+  if(msg)body+='\nRemarques : '+msg+'\n';
+  return body;
+}
+
+function submitOrder(){
+  const total=getTotal();
+  if(!total){alert('Ajoute au moins une bouteille !');return;}
+  const fn=document.getElementById('fn').value.trim();
+  const ln=document.getElementById('ln').value.trim();
+  const em=document.getElementById('em').value.trim();
+  if(!fn||!ln||!em){alert('Remplis les champs obligatoires : prénom, nom et email.');return;}
+  const body=buildOrderBody();
+  const subject='Commande vin – '+fn+' '+ln+' – '+total+'.-';
+  window.location.href='mailto:'+ORDER_EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   document.getElementById('successOverlay').classList.add('show');
 }
+
+update();
 </script>
 </body>
 </html>
